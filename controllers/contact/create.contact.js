@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler');
 const Contact = require('../../models/contact.model');
 //@desc create a contact
 //@route POST /api/contacts
-//@access Public
+//@access Private
 const createContact = asyncHandler(async (req, res) => {
     const { name, email, phone } = req.body;
     if (!name || !email || !phone) {

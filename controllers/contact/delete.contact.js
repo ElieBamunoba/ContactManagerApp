@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler');
 const Contact = require('../../models/contact.model');
 //@desc delete a contact
 //@route DELETE /api/contacts/:id
-//@access Public
+//@access Private
 const deleteContact = asyncHandler(async (req, res) => {
     const contact = await Contact.findById(req.params.id);
     if (!contact) {

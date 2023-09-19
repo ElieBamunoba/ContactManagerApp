@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler');
 const Contact = require('../../models/contact.model');
 //@desc get unique contact
 //@route GET /api/contacts/:id
-//@access Public
+//@access Private
 const getUniqueContact = asyncHandler(async (req, res) => {
     const contact = await Contact.findById(req.params.id);
     if (!contact) {
