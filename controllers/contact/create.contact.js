@@ -5,6 +5,7 @@ const Contact = require('../../models/contact.model');
 //@access Private
 const createContact = asyncHandler(async (req, res) => {
     const { name, email, phone } = req.body;
+
     if (!name || !email || !phone) {
         res.status(400);
         throw new Error("Please fill all the fields");
@@ -13,6 +14,7 @@ const createContact = asyncHandler(async (req, res) => {
         name,
         email,
         phone,
+        user_id: req.user.id,
     });
     res.status(201).json({
         message: `Contact created successfully`,

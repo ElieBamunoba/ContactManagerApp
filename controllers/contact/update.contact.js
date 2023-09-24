@@ -10,6 +10,10 @@ const updateContact = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error(`Contact ${req.params.id} not found`);
     }
+    if (contact.user_id.toString() !== req.user.id.toString()) {
+        res.status(403);
+        throw new Error(`You are not authorized to update this contact`);
+    }
     const updateContact = await Contact.findByIdAndUpdate(req.params.id, req.body,
         {
             new: true

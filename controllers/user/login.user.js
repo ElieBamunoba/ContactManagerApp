@@ -32,7 +32,7 @@ const loginUser = asyncHandler(async (req, res) => {
             //options
             {
                 //expiring time
-                expiresIn: '5m',
+                expiresIn: '500m',
             }
         );
         res.json({

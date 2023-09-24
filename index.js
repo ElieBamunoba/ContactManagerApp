@@ -20,6 +20,4 @@ app.use("/api/users", userRoutes);
 // Middleware to handle errors
 app.use(errorHandler);
 
-
-
 app.listen(port, () => console.log(`Server started on port ${port}`));
